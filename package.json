@@ -1,0 +1,24 @@
+{
+  "name": "use-counter-counter",
+  "version": "0.0.1",
+  "description": "Counts the uses",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brendankenny/use-counter-counter.git"
+  },
+  "author": "Brendan Kenny",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/brendankenny/use-counter-counter/issues"
+  },
+  "homepage": "https://github.com/brendankenny/use-counter-counter#readme",
+  "dependencies": {
+    "puppeteer": "^23.2.0"
+  }
+}
