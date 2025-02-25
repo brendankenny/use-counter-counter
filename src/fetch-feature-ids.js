@@ -9,7 +9,7 @@ const SOURCES = {
 };
 const output = path.join(import.meta.dirname, 'feature-map.js');
 
-const splitRegex = /k(?<feature>\w+)\s*=\s*(?<id>\d+)/g;
+const splitRegex = /\bk(?<feature>\w+)\s*=\s*(?<id>\d+)/g;
 
 async function fetchFeatureMap(url) {
   const featureMap = new Map()
@@ -24,10 +24,11 @@ async function fetchFeatureMap(url) {
   }
 
   // Look for missing features (e.g. if a comment breaks the regex).
-  for (const {groups} of text.matchAll(/k(?<feature>\w+)/g)) {
+  for (const {groups} of text.matchAll(/\bk(?<feature>\w+)/g)) {
     if (!features.includes(groups.feature) &&
         // From comment explaining how to mark a feature as obsolete.
-        groups.feature !== 'Frobulate' && !groups.feature.startsWith('OBSOLETE_')) {
+        groups.feature !== 'Frobulate' && !groups.feature.startsWith('OBSOLETE_') &&
+        !groups.featureId.startsWith('DRAFT_')) {
       console.log('**** split failure?', groups.feature);
     }
   }
