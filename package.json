@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/brendankenny/use-counter-counter#readme",
   "dependencies": {
-    "puppeteer": "^23.2.0"
+    "puppeteer": "^24.3.0"
   }
 }
